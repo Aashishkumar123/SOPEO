@@ -1,0 +1,79 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block body %}
+<body>
+<h4 class="container text-info">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="login-card" style="position:relative;top: 65%;">
+
+                <div class="card-header text-center">
+                    <h2>EMPLOYEE LOGIN </h2>
+                </div>
+                <!-- <div  class="container-fluid">
+    
+
+    
+                    <h2 style="color:red;margin-top:4%">
+                        <a href="{% url 'create_employee' %}"><button class="btn btn-primary" align="right" style="float:right">Create Account</button></a>
+                    </h2>
+                </div> -->
+                <style>
+                    body{
+                        background-image: url('{% static "images/pix4.jpg" %}');
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                }
+                    
+
+                </style>
+
+
+                <div class="card-body">
+                   
+                    <form action="submit" method="post">
+                         <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email"  class="form-control" id="email" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <center>
+                        <button  type="index" href="{% url 'cata' %}" class="btn btn-primary" onclick="auth()">Login</button> 
+                        </center>
+
+                        <!-- <div  class="container-fluid">
+    
+                                <a href="{% url 'create_employee' %}"><button class="btn btn-primary" align="center" style="float:center">yes</button></a>
+                            
+                        </div> -->
+                    
+
+                    </form>
+
+ <script>
+    function auth(){
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        if(email=="haresh@gmail.com","dharun@gmail.com" && password=="123"){
+            window.location.assign("cata");
+            alert("login success")
+        }
+        else{
+            alert("invalid information");
+            window.location.assign("index");
+            return
+        }
+    }
+
+ </script>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>   
+</h4>
+{% endblock %}

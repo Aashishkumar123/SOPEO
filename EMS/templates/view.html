@@ -1,0 +1,86 @@
+{% load static %}
+{% block body %}
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="C:\Users\admin\Desktop\django\SOPEO\SOPEO\EMS\static\style.css">
+    <style>
+    body{
+        background-image: url('{% static "images/fib7.webp" %}');
+        background-repeat: no-repeat;
+        background-size: 100%;
+       }
+    </style>
+
+
+<!-- <link rel = stylesheet href = "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" defer> -->
+  <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" defer></script>
+
+<div  class="container-fluid">
+    
+
+    
+        <center><h2 style="color:rgb(red, green, blue);margin-top:4%"> Ticket Status</center>
+            <!-- <a href="{% url 'rof' %}"><button class="btn btn-primary" align="right" style="float:right">Create Account</button></a> -->
+        </h2>
+        <table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+    <th>Department</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Email Id</th>
+    <th>Priority</th>
+    <th>Mobile Number</th>
+    <th>Response</th>
+    <!-- <th>description</th> -->
+  </tr>
+  </thead>
+   <tbody>
+
+    {% for i in add %}
+  <tr>
+
+    <td>{{i.department}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.category}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.priority}}</td>
+      <td>{{i.mobile}}</td>
+      <td><a href="{% url 'delete_employee' i.id %}" onclick="return confirm('Are you sure?')"><button class="btn btn-danger">delete</button></a></td>
+        <!-- <a href="{% url 'edit_employee' i.id %}" ><button class="btn btn-success">Replay</button></a></td> -->
+      <!-- <td>{{i.description}}</td> -->
+      <td>{% if i.on_leave %}
+        <a href="{% url 'replay' i.id %}" onclick="return confirm('Sloved')"><button class="btn btn-danger">pending</button></a>
+          {% else %}
+          <a href="{% url 'replay' i.id %}"  onclick="return confirm('Sloved the issues')"><button class="btn btn-success">Complete</button></a>
+        {% endif %}</td>
+      <!-- <td>{% if i.active %}Active{% else %}Inactive{% endif %}</td> -->
+    <!-- <td><a href="{% url 'edit_employee' i.id %}" ><button class="btn btn-success">Edit</button></a>
+        <a href="{% url 'delete_employee' i.id %}" onclick="return confirm('Are you sure?')"><button class="btn btn-danger">delete</button></a>
+    </td> -->
+  </tr>
+
+    {% endfor %}
+    </tbody>
+  
+</table>
+
+<button class="btn btn-primary btn-sm" (click)="logOut()" onclick="auth()">Back</button>
+<!-- <button class="btn btn-primary btn-sm" (click)="logOut()" onclick="autha()"> View Ticket</button> -->
+
+<script>
+
+  function auth(){
+  window.location.assign("cata");
+  }
+</script>
+<style>
+  body {background-color: gray(21, 50, 143)};
+
+</style>
+
+
+</div>
+
+{% endblock  %}

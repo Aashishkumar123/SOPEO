@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+{% block body %}
+
+<div class="container">
+    <h2 style="margin-top:20px" align="center">Edit Employee Details </h2><hr>
+
+
+<form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Name</label>
+      <input type="text" class="form-control"  name="name" id="inputEmail4" value="{{emp_data.name}}" required placeholder="Enter Full Name">
+    </div>
+    </div>
+  
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Last Name</label>
+        <input type="text" class="form-control" name="zipcode" id="inputEmail4" value="{{emp_data.zipcode}}" required placeholder="Enter zipcode">
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Date of Joining</label>
+      <input type="date" class="form-control" name="doj" id="inputEmail4" value="{{emp_data.doj|date:"Y-m-d"}}" required>
+    </div>
+    </div>
+
+
+    <div class="row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email Id</label>
+          <input type="text" class="form-control" name="state" id="inputEmail4" value="{{emp_data.state}}" required placeholder="Enter State">
+        </div>
+    </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+{% endblock  %}

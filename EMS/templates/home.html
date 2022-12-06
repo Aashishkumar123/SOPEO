@@ -1,0 +1,100 @@
+{% load static %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <div class="login-box">
+    <div class="lb-header">
+      <body>
+      <link rel="stylesheet" href="{% static 'style.css'%}">
+      <!-- <script src="{% static 'merge.js'%}"></script> -->
+      <a href="#" class="active" id="login-box-link">ADMIN LOGIN</a>
+      <a href="#" id="signup-box-link">EMPLOYEE LOGIN</a>
+    </div>
+
+        <div class="social-login">
+            <a href="https://www.luminadatamatics.com/">
+            <i class="container"></i>
+                  WEBSITE
+            </a>
+        </div>
+    
+    <form class="email-login" action="/login/" method="POST">
+      {% csrf_token %}
+    <div class="u-form-group">
+      {% if messages %}
+        {% for message in messages %}
+          {{message}} <br />
+        {% endfor %}
+      {% endif %}
+        <label for="email"></label>
+        <input type="hidden" name="type" value="admin" />
+        <input type="email"   placeholder="Email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="u-form-group">
+        <label for="password"></label>
+        <input type="password"  placeholder="Password" class="form-control" id="password" name="password" required>
+    </div>
+
+    <div class="u-form-group">
+    <button  type="submit" class="btn btn-primary">Login</button></div>
+
+      {% comment %} <script>
+        function auth(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if(email=="admin@gmail.com" && password=="123"){
+                window.location.assign("employee_list");
+                alert("login success")
+          }
+            else{
+                alert("invalid information");
+                window.location.assign("");
+                return
+          }
+        }
+    
+      </script> {% endcomment %}
+</form>
+    <form class="email-signup" action="/login/" method="POST">
+      {% csrf_token %}
+      <div class="u-form-group">
+        <input type="hidden" name="type" value="employee" />
+        <label for="email"></label>
+        <input type="email" placeholder="Email" placeholder="Email" class="form-control" id="email1" name="email" required>
+      </div>
+      <div class="u-form-group">
+        <label for="password"></label>
+        <input type="password" placeholder="Password" class="form-control" id="password1" name="password" required>
+      </div>
+      <div class="u-form-group">
+        <button  type="submit" class="btn btn-primary">Login</button></div>
+      </div>
+      
+      {% comment %} <script>
+        function autha(){
+            var email = document.getElementById("email1").value;
+            var password = document.getElementById("password1").value;
+            
+
+            if(email=="haresh@gmail.com","dharun@gmail.com" && password=="123"){
+              window.location.assign("cata");
+              alert("login success")
+          }
+            else{
+                alert("invalid information");
+                window.location.assign("");
+                return
+
+
+
+
+          }
+        }
+    
+      </script> {% endcomment %}
+      
+
+    </form>
+  </body>
+  <script src="{% static 'merge.js'%}"></script>
+
+</div>

@@ -1,0 +1,117 @@
+{% load static %} 
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+  
+    <h2 class="active"> Admin Login </h2>
+    <h2 class="inactive underlineHover">Employee Login </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="Welcome" />
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <!-- <div class="mb-3">
+      <input type="text" id="login" class="form-label" name="Email" placeholder="login">
+      <input type="text" id="password" class="form-label" name="login" placeholder="password">
+      </div> -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email"  class="form-control" id="email" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password">
+    </div>
+      <button  type="login" href="{% url 'employee_list' %}" class="btn btn-primary" onclick="auth()">Login</button>
+
+      
+    </form>
+    <script>
+      function auth(){
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+          if(email=="admin@gmail.com" && password=="123"){
+              window.location.assign("employee_list");
+              alert("login success")
+          }
+          else{
+              alert("invalid information");
+              window.location.assign("login");
+              return
+          }
+      }
+  
+   </script> 
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+  <div class="login-box">
+    <div class="lb-header">
+      <body>
+      <link rel="stylesheet" href="{% static 'style.css'%}">
+      <script src="/EMS/templates/mer.js"></script>
+      <a href="#" class="active" id="login-box-link">Login</a>
+      <a href="#" id="signup-box-link">Sign Up</a>
+    </div>
+    <div class="social-login">
+      <a href="#">
+        <i class="fa fa-facebook fa-lg"></i>
+        Login in with facebook
+      </a>
+      <a href="#">
+        <i class="fa fa-google-plus fa-lg"></i>
+        log in with Google
+      </a>
+    </div>
+    <form class="email-login">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Log in</button>
+      </div>
+      <div class="u-form-group">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+    </form>
+    <form class="email-signup">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Confirm Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Sign Up</button>
+      </div>
+    </form>
+  </body>
+</div>
+
+

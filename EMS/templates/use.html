@@ -1,0 +1,148 @@
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <center>        
+  
+            <div class="modal-header">
+                <h3 class="modal-title">Add Ticket</h3>
+    <form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+                <!-- <button type="button" class="close" (click)="showModal=false" data-dismiss="modal">&times;</button> -->
+            </div>
+        <h3>
+            
+  
+            <form></form>     
+  
+              
+            <div class="modal-body">
+  
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <label for="department"><b>Select Register:</b></label>
+               <select id="department" name="department" class="form-control"  >
+                <option>Office Admin</option>
+                <option>IT-Operations</option>
+                <option>i-connect</option>
+                <option>HR Care</option>
+                <option>Laptop Clinic</option>
+               </select>
+                </div>
+                <form> </form>
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <label for="name" class="form-label"><b>Name:</b></label>
+                    <input id="name" name="name" type="text" class="form-control"  value="{{employee.firstName}}">
+                   </div>
+                </div>
+              </div>
+              <form> </form>
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <label for="category"><b>Select Category:</b></label>
+                  <select name="category" id="category" class="form-control" >
+                   <option>Bio Metric Access</option>
+                   <option>Chairs/ Workstations</option>
+                   <option>Communication(Telephones)</option>
+                   <option>Drinking Water</option>
+                   <option>Electrical</option>
+                   <option>Employee's Cab</option>
+                   <option>ID card lost/change</option>
+                   <option>Lost and Found</option>
+                   <option>Security</option>
+                   <option>others</option>
+                  </select>
+                </div>
+                <form> </form>
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <label for="email" class="form-label"><b>Email:</b></label>
+                    <input id="email" name="email" type="text" class="form-control" value="{{employee.email}}" >
+                   </div>
+                </div>
+              </div>
+              <form> </form>
+  
+              
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <label for="priority"><b>Priority:</b></label>
+                  <select id="priority" name="priority" class="form-control" >
+                   <option>High</option>
+                   <option>Medium</option>
+                   <option>Low</option>
+                   <option >Crictical</option>
+                  </select>
+                </div>
+
+                <form> </form>
+                <div class="col-md-6 col-sm-6">
+                <div class="row">
+                  <label for="mobile" class="form-label"><b>Mobile</b></label>
+                  <input id="mobile" name="mobile" type="text" class="form-control"  value="{{employee.phone}}" >
+                  <!-- value="{{employee.phone}}" -->
+                 </div>  
+                 </div>
+              </div>
+              <form> </form>
+  
+              <div class="row">
+                <div >
+                  <label for="description"><b>Description:</b></label>
+                  <textarea class="form-control" rows="5" name="description" id="description" ></textarea><br>
+                </div>
+              </div>  
+              </div>
+              <form> </form>
+  
+  
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            <form> </form>
+          </form>
+
+        
+            
+        </div>
+        </div>
+        </div>
+  
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="login-card mt-5">
+        <div class="card-header text-center bg-info">
+        </div>
+
+          <div class="mt-3">
+            <center>
+            <button class="btn btn-primary btn-sm" (click)="logOut()" style="margin-left: 10px;"onclick="auth()"> Log Out</button>
+            <button class="btn btn-primary btn-sm" (click)="Ticket()" style="margin-left: 12px;" onclick="Account()"> refresh</button>
+            <!-- <button class="btn btn-primary btn-sm" (click)="ticketStatus()" style="margin-left: 12px;"> Ticket Status </button> -->
+        </center>
+        </h3>
+          </div>
+          
+
+
+          <script>
+
+            function auth(){
+            window.location.assign("index");
+            }
+            function Account(){
+            window.location.assign("rof")
+            }
+            
+        </script>
+    </center>
+         </div> 
+            </div>
+        </div>
+        </div>
+        </form>
+        </div>
